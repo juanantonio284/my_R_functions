@@ -8,8 +8,25 @@ This is a wrapper for the `str()` function; it displays the internal structure o
 easier-to-read fashion.
   
 **Comparison of `str` and `cstr` for a sample object x**
-  
+
+```R
+
+library(data.table)
+
+x <- data.table(
+  year = 2010:2014,
+  v1 = runif(5),
+  v2 = 1:5,
+  v3 = letters[1:5]
+)
+
+# Given an object x, call str and cstr to compare their outputs
+str(x)
+cstr(x)
+
+``` 
 ```
+
 
 > str(x)
 Classes ‘data.table’ and 'data.frame':  5 obs. of  4 variables:
@@ -48,5 +65,22 @@ Do_Not_Delete( object_names = c( "x", "y", "z") )
 not_trash <- c( "x", "y", "z")
 Do_Not_Delete( object_names = not_trash )
 # everything will be deleted except x, y, z, and the 'not_trash' vector
+
+```
+
+## odd (open data directory)
+
+Automatically opens a directory in a window in your system's GUI; works best when called at the end
+of a script to see the folder with the results.
+
+```R
+
+# Usage 
+
+# 1. PRE-define the directory that you want opened: 
+data_dir <- ~/path/to/directory
+
+# 2. Call the function with no arguments at the end of a script (be ready for GUI window to open):
+odd()
 
 ```
