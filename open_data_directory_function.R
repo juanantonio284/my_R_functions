@@ -2,8 +2,8 @@ message( "\t", "\t", "open_data_directory" )
 
 # open_data_directory
 
-# Automatically opens a directory in a window (in your system's GUI).
-# This function works best when called at the end of a script to see the folder with the results.
+# Automatically opens a directory in a window in your system's GUI; works best when called at the end
+# of a script to see the folder with the results.
 
 odd <- function( dir = data_dir ){
 	system(

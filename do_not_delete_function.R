@@ -1,4 +1,10 @@
-# 1 function definition ----------------------------------------------------------------------------
+message( "\t", "\t", "Do_Not_Delete" )
+
+# Do_Not_Delete
+
+# Takes a vector of character strings with the names of objects in the global environment 
+# that you do not want deleted and deletes all other objects.
+
 Do_Not_Delete <- function( object_names = character() ) {
   
   # adds the name of the function itself to avoid deletion
@@ -10,10 +16,10 @@ Do_Not_Delete <- function( object_names = character() ) {
     list = ls( name = .GlobalEnv )[ !( ls(name = .GlobalEnv) %in% as.character(object_names) ) ]
   )
   
-}# function end
+}
 
 
-# notes ............................................................................................
+# Notes --------------------------------------------------------------------------------------------
 
 # 1.
 # The `remove` and the `ls` functions need to be clear on where to work: outside the scope of the
@@ -36,21 +42,21 @@ Do_Not_Delete <- function( object_names = character() ) {
 #     Note the usage of the [!()] form to subset the vector given by the first ls(name = .GlobalEnv)
 
 
-# 2 Example ----------------------------------------------------------------------------------------
+# Example ------------------------------------------------------------------------------------------
 
 # some objects in the global environment
-x <- 1; y <- "abc"; z <- 3
-trash_1 <- "trash"; trash_2 <- "trash"
+# x <- 1; y <- "abc"; z <- 3
+# trash_1 <- "trash"; trash_2 <- "trash"
 
 # Sample call 1
-Do_Not_Delete( object_names = c( "x", "y", "z") )
+# Do_Not_Delete( object_names = c( "x", "y", "z") )
 
 # Sample call 2
-not_trash <- c( "x", "y", "z")
-Do_Not_Delete( object_names = not_trash )
+# not_trash <- c( "x", "y", "z")
+# Do_Not_Delete( object_names = not_trash )
 
 
-# to-do list -------------------------------------------------------------------------------------
+# to-do list ---------------------------------------------------------------------------------------
 
 # add this message later, or a "Continue?" type message so the user can double check
-message( "delete everything except these objects: ", object_names ) 
+# message( "delete everything except these objects: ", object_names ) 

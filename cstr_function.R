@@ -1,9 +1,9 @@
+message( "\t", "\t", "cstr (clean structure)" )
+
 # cstr (clean structure)
 
-# Compactly displays the internal structure of an R object 
-# [A read-friendly wrapper for the str() function]
-
-message( "\t", "\t", "clean_structure_function" )
+# This is a wrapper for the `str()` function; it displays the internal structure of an R object in 
+# an easier-to-read fashion.
 
 cstr <- function( object, vec.len = 1, standard = "SI", units = "kB") {
 	
